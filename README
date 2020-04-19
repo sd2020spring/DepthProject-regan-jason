@@ -1,0 +1,15 @@
+DEPTH PROJECT README
+
+SOFTDES PARTNER FINDER
+
+In this game, you will be attempting to find the perfect Softdes partner.
+Traverse the classroom, interact with your classmates, and learn about their
+working styles and habits.
+Maybe you'll create the best final project with your partner!
+
+CODE
+
+partner_finder_final.py = holds all the important classes and their functions.
+partner_finder_controller.py = holds all the info about controlling the player character and the different button functions
+partner_finder_viewer.py = updates environment depending on where the player character moves
+
