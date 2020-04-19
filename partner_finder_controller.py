@@ -1,4 +1,16 @@
 #partner_finder_controller
+import Pygame
+
+from pygame.locals import(
+    K_UP,
+    K_DOWN,
+    K_LEFT,
+    K_RIGHT,
+    K_ESCAPE,
+    KEYDOWN,
+    QUIT,
+)
+
 class PlayerController:
     '''
     A controller that allows the input of the user to change
