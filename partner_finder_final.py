@@ -11,26 +11,8 @@ Created by: Jason Lin and Regan Mah
 import pygame
 import random
 
-# import some controls
-from pygame.locals import(
-    K_UP,
-    K_DOWN,
-    K_LEFT,
-    K_RIGHT,
-    K_ESCAPE,
-    KEYDOWN,
-    QUIT,
-)
-
 #initialize Pygame
 pygame.init()
-
-#Define constants for window
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
-
-#Screen object with params SCREEN_WIDTH and SCREEN_HEIGHT
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 class Prof(Menu):
     """
@@ -65,28 +47,42 @@ class Student:
         and the more player characters stored, the less random students
         will be generated.
         """
-        pass
+
+        max_students = 40
+
+        names = ["""put random list of names here"""]
+        gradyear = ["2020", "2021", "2022", "2023", "2024"]
+        traits1 = [hardworking, laidback, useless]
+        traits2 = [knowledgable, resourceful, clueless]
+        traits3 = [pancake_lover, eats_anything, waffle_lover]
+
+        n = max_students - created_students
+
+        for n students:
+            self.name = random.choose(names)
+            self.gradyear = random.choose(gradyear)
+            self.trait1 = random.choose(traits1)
+            self.trait2 = random.choose(traits2)
+            self.trait3 = random.choose(traits3)
+
 
 
 class PlayerCharacter(Student):
 
     def create_student(name, gradyear):
-        """
-        Takes player input to create a character with a name
-        and their gradyear
-        """
+
+        #Takes player input to create a character with a name
+        #and their gradyear
+
         name = input("What is your name?")
         year = input("What year are you in?")
-
-        return name, year
+        trait1, trait2, trait3 = define_traits()
+        #return student?
 
     def define_traits():
-        """
-        Asks the player several questions that will define the traits
-        of the player character. These traits will then be used to
-        see if the player character and their parter are compatible.
-        """
-
+        #Asks the player several questions that will define the traits
+        #of the player character. These traits will then be used to
+        #see if the player character and their parter are compatible.
         question1 = input("How would you describe your working style?\nA) If it needs to be done, it better be done well\nB) Meh it'll happen one way or another\nC) Work? What's work?")
         question2 = input("Coding experience?\nA) I know everything I need to know\nB) I know enough to get by\nC) Coding? What's coding?")
         question3 = input("Do you like pancakes?\nA) I eat pancakes and nothing else\nB) Meh I'll eat them if they're put in front of me\nC) I will only eat waffles and nothing else")
@@ -128,6 +124,8 @@ class PlayerCharacter(Student):
         Stores student in a list that will be used to select
         which students populate the class at random.
         """
+        created_students = []
+        created_students.append(create_student)
         pass
 
 class Menu:
@@ -155,7 +153,8 @@ class Table:
     '''
     Serves as an obstacle around the classroom to resemble
     a real classroom as it isnt just empty space
-    Note: Players will not be able to walk into them
+    Note: Players will not be able to phase through them
     '''
+    
 
     def __init__(self)
