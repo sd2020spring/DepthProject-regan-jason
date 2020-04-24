@@ -9,9 +9,10 @@ from pygame.locals import(
     K_ESCAPE,
     KEYDOWN,
     QUIT,
+    INTERACT
 )
 
-class PlayerController:
+class Player:
     '''
     A controller that allows the input of the user to change
     the view on the board.
@@ -21,9 +22,11 @@ class PlayerController:
         view:
     '''
     def __init__(self):
-        pass
+        self.x = x
+        self.y = y
+        self.image = image
 
-    def move(self, start_spot, end_spot):
+    def move(self, speedx, speedy):
         '''
         Moves player character depending on the key input
         given by the player. Movement will be given as such:
@@ -31,15 +34,9 @@ class PlayerController:
         Move Left = Left arrow
         Move Up = Up arrow
         Move Down = Down arrow
-        Menu = D
-        Select(in menu)/Interact(in classroom) = F
-        Quit Menu = Escape
         '''
-        pass
+        self.x += speedx
+        self.y += speedy
 
-    def run(self):
-        '''
-        The main loop to run the game (?)
-        will allow the player to continue moving until the
-        program is quit or a partner is selected.'''
-        pass
+    def draw(self):
+        window.blit(self.image(self.x, self.y))
