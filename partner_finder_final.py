@@ -31,53 +31,45 @@ class Prof(Menu):
 
 class Student:
 
-    def __init__(self, name, gradyear, trait1, trait2, trait3):
+    def __init__(self, name, gradyear, trait1, trait2, trait3, x, y):
         self.name = name
         self.gradyear = gradyear
         self.trait1 = trait1
         self.trait2 = trait2
         self.trait3 = trait3
+        self.x = x
+        self.y = y
 
     def generate_student():
-        """
-        This function will generate a student using the random.choice
-        function. It will choose a random name, a random gradyear, and
-        random traits.
-        Note: Will only generate enough students to fill the classroom,
-        and the more player characters stored, the less random students
-        will be generated.
-        """
 
-        max_students = 40
+        students = []
 
-        names = ["""put random list of names here"""]
+        names = ["Sophia", "Isabella", "Emma", "Olivia", "Ava", "Emily", "Abigial", "Ella",
+        "Addison", "Avery", "Lillian", "Lilith", "Bella", "Charlotte", "Aubrey", "Mariah",
+        "Eva", "Genesis", "Scarlett", "Madelyn", "Molly", "Faith", "Harper", "Autumn", "Kaylee",
+        "Lauren", "Allison", "Sarah", "Jacob", "Isaac", "Andrew", "Ryan", "Zachary", "Diego",
+        "Jaden", "Kevin", "Xavier", "Ian", "Chase", "Ayden", "Carson", "Adam", "Thomas", "Jose",
+        "Robert", "Dylan", "Joseph", "Caleb", "Elijah", "Evan", "Eli", "Luis"]
         gradyear = ["2020", "2021", "2022", "2023", "2024"]
-        traits1 = [hardworking, laidback, useless]
-        traits2 = [knowledgable, resourceful, clueless]
-        traits3 = [pancake_lover, eats_anything, waffle_lover]
+        traits1 = ["hardworking", "laidback", "useless"]
+        traits2 = ["knowledgable", "resourceful", "clueless"]
+        traits3 = ["pancake_lover", "eats_anything", "waffle_lover"]
 
-        n = max_students - created_students
+        while i <= 40:
+            students.append(Student(i, random.choice(names), random.choice(gradyear), random.choice(traits1), random.choice(traits2), random.choice(traits3), x, y))
 
-        for n students:
-            self.name = random.choose(names)
-            self.gradyear = random.choose(gradyear)
-            self.trait1 = random.choose(traits1)
-            self.trait2 = random.choose(traits2)
-            self.trait3 = random.choose(traits3)
-
+    def draw(self):
+        window.blit(self.image(self.x, self.y))
 
 
 class PlayerCharacter(Student):
 
     def create_student(name, gradyear):
-
         #Takes player input to create a character with a name
         #and their gradyear
-
         name = input("What is your name?")
         year = input("What year are you in?")
         trait1, trait2, trait3 = define_traits()
-        #return student?
 
     def define_traits():
         #Asks the player several questions that will define the traits
@@ -88,33 +80,33 @@ class PlayerCharacter(Student):
         question3 = input("Do you like pancakes?\nA) I eat pancakes and nothing else\nB) Meh I'll eat them if they're put in front of me\nC) I will only eat waffles and nothing else")
 
         if question1 == 'A' or question1 == 'a':
-            trait1 = hardworking
+            trait1 = "hardworking"
             return trait1
         elif question1 == 'B' or question1 == 'b':
-            trait1 = laidback
+            trait1 = "laidback"
             return trait1
         elif question1 == 'C' or question1 == 'c':
-            trait1 = useless
+            trait1 = "useless"
             return trait1
 
         if question2 == 'A' or question2 == 'a':
-            trait2 = knowledgable
+            trait2 = "knowledgable"
             return trait2
         elif question2 == 'B' or question2 == 'b':
-            trait2 = resourceful
+            trait2 = "resourceful"
             return trait2
         elif question2 == 'C' or question2 == 'c':
-            trait2 = clueless
+            trait2 = "clueless"
             return trait2
 
         if question3 == 'A' or question3 == 'a':
-            trait3 = pancake_lover
+            trait3 = "pancake_lover"
             return trait3
         elif question3 == 'B' or question3 == 'b':
-            trait3 = eats_anything
+            trait3 = "eats_anything"
             return trait3
         if question3 == 'C' or question3 == 'c':
-            trait3 = waffle_lover
+            trait3 = "waffle_lover"
             return trait3
 
         return trait1, trait2, trait3
@@ -125,15 +117,17 @@ class PlayerCharacter(Student):
         which students populate the class at random.
         """
         created_students = []
-        created_students.append(create_student)
-        pass
+        created_students.append(self.create_student())
+
+        return created_students
 
 class Menu:
     """
     A class used for the startup menus and the endgame menus, as
     well as the teacher menu (?)
     """
-    pass
+    def __init__():
+        pass
 
 class Player(pygame.sprite.Sprite):
     '''
@@ -149,12 +143,5 @@ class Player(pygame.sprite.Sprite):
     def update(self):
         self.rect.x += 2
 
-class Table:
-    '''
-    Serves as an obstacle around the classroom to resemble
-    a real classroom as it isnt just empty space
-    Note: Players will not be able to phase through them
-    '''
-    
-
-    def __init__(self)
+running = True
+while running
