@@ -7,6 +7,9 @@ import partner_finder_view
 
 running = True
 while running
+
+    PlayerCharacter.create_student()
+
     player = Player(0,0,playerimage)
     player.draw()
     speedx = 0
