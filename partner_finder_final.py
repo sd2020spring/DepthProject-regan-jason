@@ -142,6 +142,3 @@ class Player(pygame.sprite.Sprite):
 
     def update(self):
         self.rect.x += 2
-
-running = True
-while running
