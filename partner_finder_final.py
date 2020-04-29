@@ -129,16 +129,4 @@ class Menu:
     def __init__():
         pass
 
-class Player(pygame.sprite.Sprite):
-    '''
-    This will be the sprite/model for the current player
-    '''
-    def __init__(self):
-        pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.Surface ((2,2)) #We'll decide on sizing
-        self.image.fill(WHITE) # Character is a black square sized 2,2 for now
-        self.rect = self.image.get_rect()
-        self.rect.center = (WIDTH / 2, HEIGHT / 2)
 
-    def update(self):
-        self.rect.x += 2
