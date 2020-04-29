@@ -12,31 +12,23 @@ from pygame.locals import(
     INTERACT
 )
 
-class Player:
-    '''
-    A controller that allows the input of the user to change
-    the view on the board.
 
-    Attributes:
-        classroom: model of classroom
-        view:
+class Player(pygame.sprite.Sprite):
+    '''
+    This will be the sprite/model for the current player
     '''
     def __init__(self):
-        self.x = x
-        self.y = y
-        self.image = image
+        pygame.sprite.Sprite.__init__(self)
+        self.image = pygame.Surface ((2,2)) #We'll decide on sizing
+        self.image.fill(WHITE) # Character is a black square sized 2,2 for now
+        self.rect = self.image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
+        self.rect.center = (WIDTH / 2, HEIGHT / 2)
 
     def move(self, speedx, speedy):
-        '''
-        Moves player character depending on the key input
-        given by the player. Movement will be given as such:
-        Move Right = Right arrow
-        Move Left = Left arrow
-        Move Up = Up arrow
-        Move Down = Down arrow
-        '''
-        self.x += speedx
-        self.y += speedy
+        self.rect.x += speedx
+        self.rect.y += speedy
 
     def draw(self):
-        window.blit(self.image(self.x, self.y))
+        window.blit(self.image.get_rect(self.rect.x, self.rect.y))
