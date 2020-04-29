@@ -18,7 +18,7 @@ while running
 
     PlayerCharacter.create_student()
 
-    player = Player(0,0,playerimage)
+    player = Player()
     player.draw()
     speedx = 0
     speedy = 0
