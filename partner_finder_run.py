@@ -1,22 +1,27 @@
 """
 Main file to put the running code (since I can't keep track of everything)
 """
-from partner_finder_final import Player, Student
-import partner_finder_controller
-import partner_finder_view
+import pygame
+from partner_finder_final import Student
+from partner_finder_controller import Player
+from partner_finder_view import Classroom
 
+#initialize Pygame
+pygame.init()
 
-#Define constants for window
+#Screen object with params SCREEN_WIDTH and SCREEN_HEIGHT
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 
-#Screen object with params SCREEN_WIDTH and SCREEN_HEIGHT
-#screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 running = True
 while running:
 
     #PlayerCharacter.create_student()
+    classroom = Classroom()
+    classroom.HEIGHT = 800
+    classroom.WIDTH = 600
 
     player = Player()
     player.draw()
