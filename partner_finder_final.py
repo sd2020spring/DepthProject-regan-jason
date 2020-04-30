@@ -13,9 +13,6 @@ import random
 
 white=(255,255,255)
 
-#initialize Pygame
-pygame.init()
-
 class Menu:
     """
     A class used for the startup menus and the endgame menus, as
