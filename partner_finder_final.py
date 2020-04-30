@@ -11,8 +11,18 @@ Created by: Jason Lin and Regan Mah
 import pygame
 import random
 
+white=(255,255,255)
+
 #initialize Pygame
 pygame.init()
+
+class Menu:
+    """
+    A class used for the startup menus and the endgame menus, as
+    well as the teacher menu (?)
+    """
+    def __init__():
+        pass
 
 class Prof(Menu):
     """
@@ -121,12 +131,27 @@ class PlayerCharacter(Student):
 
         return created_students
 
-class Menu:
-    """
-    A class used for the startup menus and the endgame menus, as
-    well as the teacher menu (?)
-    """
-    def __init__():
-        pass
 
+class Player(pygame.sprite.Sprite):
+    '''
+    This will be the sprite/model for the current player
+    '''
+    SIZE = 2
 
+    def __init__(self):
+        pygame.sprite.Sprite.__init__(self)
+        self.image = pygame.Surface (2, 2) #We'll decide on sizing
+        self.image.fill(white) # Character is a white square sized 2,2 for now
+        self.image.set_colorkey(white)
+
+        #Draws the Shape (a rectangle)
+        pygame.draw.rect(self.image, white, [2, 2])
+
+        # Instead we could load a proper pciture of a car...
+        # self.image = pygame.image.load("car.png").convert_alpha()
+
+        # Fetch the rectangle object that has the dimensions of the image.
+        self.rect = self.image.get_rect()
+
+    def update(self):
+        self.rect.x += self.SIZE
