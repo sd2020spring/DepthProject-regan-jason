@@ -1,15 +1,17 @@
 # partner_finder_view
-import Pygame
+import pygame
 import partner_finder_final
 
-class classroom:
+class Classroom:
     '''
     Class to help visualize the classroom enviornment
 
     Attributes: a Classroom instance representing the room to EnvironmentView
     '''
-    def __init__(self, classroom):
-        self.classroom = classroom
+    def __init__(self, height, width):
+        self.HEIGHT = HEIGHT
+        self.WIDTH = WIDTH
+
 
     def draw(self):
         '''
@@ -17,7 +19,7 @@ class classroom:
         with tables/people
         Returns: The current layout of the Classroom
         '''
-        pass
+        window.blit(self.image.get_rect(self.HEIGHT, self.WIDTH))
 
     def add_students(self):
         '''
