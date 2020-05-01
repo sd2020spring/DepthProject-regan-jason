@@ -10,20 +10,23 @@ from partner_finder_view import Classroom
 pygame.init()
 
 #Screen object with params SCREEN_WIDTH and SCREEN_HEIGHT
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
+window = (800,600)
 
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+#Set screen up
+screen = pygame.display.set_mode(window)
+background = pygame.Surface(window)
+
+screen.blit(background,(0,0))
+
+pygame.display.flip()
 
 running = True
 while running:
 
     #PlayerCharacter.create_student()
-    classroom = Classroom()
-    classroom.HEIGHT = 800
-    classroom.WIDTH = 600
+    classroom = Classroom(800, 600)
 
-    player = Player()
+    player = Player(0,0)
     player.draw()
     speedx = 0
     speedy = 0
