@@ -1,4 +1,4 @@
-# hello
+# Softdes Partner Finder Game
 
 
-## This is the first message on the site
+## By Jason Lin and Regan Mah
