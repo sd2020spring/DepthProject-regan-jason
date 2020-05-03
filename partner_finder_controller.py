@@ -1,37 +1,48 @@
 #partner_finder_controller
 import pygame
-from pygame.locals import(
-    K_UP,
-    K_DOWN,
-    K_LEFT,
-    K_RIGHT,
-    K_ESCAPE,
-    KEYDOWN,
-    QUIT,
-)
+from constants import *
+from partner_finder_view import *
+from partner_finder_run import *
 
 
-blue = (0,0,225)
 
-class Player(pygame.sprite.Sprite):
-    '''
-    This will be the sprite/model for the current player
-    '''
-    def __init__(self, x, y):
+class obj_Actor:
+    def __init__(self, x, y, name_object, sprite, classmate = None, ai = None):
+        self.x = x  # map address
+        self.y = y  # map address
+        self.sprite = sprite
 
-        distance = 2
+        self.classmate = classmate
+        if classmate:
+            self.classmate = classmate
+            classmate.owner = self
 
-        pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.Surface ((2,2)) #We'll decide on sizing
-        self.image.fill(blue) # Character is a black square sized 2,2 for now
-        self.rect = self.image.get_rect()
-        self.rect.x = x
-        self.rect.y = y
-        self.rect.center = (distance / 2, distance / 2)
+        self.ai = ai
+        if ai:
+            self.ai = ai
+            ai.owner = self
 
-    def move(self, speedx, speedy):
-        self.rect.x += speedx
-        self.rect.y += speedy
 
     def draw(self):
-        screen.blit(self.image.get_rect(self.rect.x, self.rect.y)
+        SURFACE_MAIN.blit(self.sprite, (self.x*CELL_WIDTH, self.y*CELL_HEIGHT))
+
+    def move(self, dx, dy):
+        if GAME_MAP[self.x + dx][self.y + dy].block_path == False:
+            self.x += dx
+            self.y += dy
+
+
+'''
+    _    ___
+   / \  |_ _|
+  / _ \  | |
+ / ___ \ | |
+/_/   \_\___|
+'''
+
+class ai_Test:
+    '''
+    Every turn classmates move
+    '''
+    def take_turn(self):
+        self.owner.move(-1, 0)
