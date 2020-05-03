@@ -1,0 +1,22 @@
+import pygame
+
+
+# HERE ARE THE COLORS
+
+GAME_WIDTH = 800
+GAME_HEIGHT = 600
+CELL_WIDTH = 32
+CELL_HEIGHT = 32
+
+CLASSROOM_WIDTH = 30
+CLASSROOM_HEIGHT = 30
+
+COLOR_BLACK = (0,0,0)
+COLOR_WHITE = (255, 255, 255)
+COLOR_GREY = (100, 100, 100)
+
+#SPRITES
+S_PLAYER = pygame.image.load("data/cheems.png")
+S_WALL = pygame.image.load("data/table.png")
+S_FLOOR = pygame.image.load("data/floor.png")
+S_CLASSMATE = pygame.image.load("data/doge.png")
