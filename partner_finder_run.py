@@ -39,6 +39,13 @@ class obj_Actor:
             self.x += dx
             self.y += dy
 
+'''''''''
+  ____
+ |  _ \ _ __ __ ___      _(_)_ __   __ _
+ | | | | '__/ _` \ \ /\ / / | '_ \ / _` |
+ | |_| | | | (_| |\ V  V /| | | | | (_| |
+ |____/|_|  \__,_| \_/\_/ |_|_| |_|\__, |
+                                  |___/        '''''''''
 
 
 def draw_game():
@@ -55,6 +62,8 @@ def draw_game():
     # draws in all game objects in the list in an easy fashion
     for obj in GAME_OBJECTS:
         obj.draw()
+
+    draw_debug()
 
     # update the display
     pygame.display.flip()
@@ -75,6 +84,44 @@ def draw_map(map_to_draw):
             else:
                 #draw floor if its traversable
                 SURFACE_MAIN.blit(S_FLOOR, ( x*CELL_WIDTH, y*CELL_HEIGHT))
+
+def draw_debug():
+
+    draw_text(SURFACE_MAIN, "FPS: " + str(int(CLOCK.get_fps())), (0, 0), COLOR_BLUE)
+
+def draw_text(display_surface, text_to_display, T_coords, text_color):
+    ''' this function takes text, and displays it on the referenced surface. '''
+
+    text_surf, text_rect = helper_text_objects(text_to_display, text_color)
+
+    text_rect.topleft = T_coords
+
+    display_surface.blit(text_surf, text_rect)
+
+
+
+'''
+ _   _ _____ _     ____  _____ ____  ____
+| | | | ____| |   |  _ \| ____|  _ \/ ___|
+| |_| |  _| | |   | |_) |  _| | |_) \___ \
+|  _  | |___| |___|  __/| |___|  _ < ___) |
+|_| |_|_____|_____|_|   |_____|_| \_\____/   '''
+
+
+def helper_text_objects(incoming_text, incoming_color):
+
+    Text_surface = FONT_MESSAGE.render(incoming_text, False, incoming_color)
+
+    return Text_surface, Text_surface.get_rect()
+
+
+'''
+  ____    _    __  __ _____
+ / ___|  / \  |  \/  | ____|
+| |  _  / _ \ | |\/| |  _|
+| |_| |/ ___ \| |  | | |___
+ \____/_/   \_\_|  |_|_____|  '''
+
 
 def game_main_loop():
 
@@ -102,18 +149,25 @@ def game_main_loop():
 
         # Drawing the game
         draw_game()
+
+        # TEMPORARY FPS CLOCK
+        CLOCK.tick(GAME_FPS)
+
     # Quitting the game
     pygame.quit()
     exit()
 
 
 def game_initialize():
-    '''This function initializes mainwindow and pygame '''
-    global SURFACE_MAIN, GAME_MAP, PLAYER, CLASSMATE, GAME_OBJECTS
+    '''This function initializes mainwindow and pygame '''         # v temporary
+    global SURFACE_MAIN, GAME_MAP, PLAYER, CLASSMATE, GAME_OBJECTS, CLOCK #temporary
     # important to keep everything in the initialization
 
     #initialize pygame
     pygame.init()
+
+    CLOCK = pygame.time.Clock()
+
     # sets parameters from constants.py
     SURFACE_MAIN = pygame.display.set_mode( (GAME_WIDTH, GAME_HEIGHT) )
     # gives map builder a variable
