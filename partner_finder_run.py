@@ -3,41 +3,13 @@ Main file to put the running code (since I can't keep track of everything)
 """
 import pygame
 # from partner_finder_final import obj_Actor
-from partner_finder_controller import *
+from partner_finder_controller import obj_Actor, ai_Test
 from constants import *
-from partner_finder_view import *
-from partner_finder_final import *
+from partner_finder_view import map_create
+from utilities import struc_Tile, com_Classmate, generate_student
 
 
-
-class obj_Actor:
-    ''' This Class serves as all characters including players
-        and classmates '''
-    def __init__(self, x, y, name_object, sprite, classmate = None, ai = None):
-        self.x = x  # map address
-        self.y = y  # map address
-        self.sprite = sprite
-
-        self.classmate = classmate
-        if classmate:
-            self.classmate = classmate
-            classmate.owner = self
-        # This represents the ai for classmate npcs
-        self.ai = ai
-        if ai:
-            self.ai = ai
-            ai.owner = self
-
-
-    def draw(self):
-        SURFACE_MAIN.blit(self.sprite, (self.x*CELL_WIDTH, self.y*CELL_HEIGHT))
-        # Draws all character sprites in a 32x32 pixel size
-
-    # The player character can move as long as nothing (a desk) is blocking their path
-    def move(self, dx, dy):
-        if GAME_MAP[self.x + dx][self.y + dy].block_path == False:
-            self.x += dx
-            self.y += dy
+INTERACT_MODE = False
 
 '''''''''
   ____
@@ -61,9 +33,9 @@ def draw_game():
 
     # draws in all game objects in the list in an easy fashion
     for obj in GAME_OBJECTS:
-        obj.draw()
+        obj.draw(SURFACE_MAIN)
 
-    draw_debug()
+    draw_messages()
 
     # update the display
     pygame.display.flip()
@@ -85,9 +57,19 @@ def draw_map(map_to_draw):
                 #draw floor if its traversable
                 SURFACE_MAIN.blit(S_FLOOR, ( x*CELL_WIDTH, y*CELL_HEIGHT))
 
-def draw_debug():
+def draw_messages():
 
-    draw_text(SURFACE_MAIN, "FPS: " + str(int(CLOCK.get_fps())), (0, 0), COLOR_BLUE)
+
+    for classmate in All_CLASSMATES:
+        if classmate.x == PLAYER.x and classmate.y == PLAYER.y:
+                print(INTERACT_MODE)
+                if INTERACT_MODE == False:
+                    draw_text(SURFACE_MAIN, classmate.name+ " : Hi! my name is " + classmate.name, (0, 0), COLOR_BLUE)
+                else:
+                    draw_text(SURFACE_MAIN, classmate.name+ " We are now interacting! ", (0, 0), COLOR_BLUE)
+
+
+
 
 def draw_text(display_surface, text_to_display, T_coords, text_color):
     ''' this function takes text, and displays it on the referenced surface. '''
@@ -127,10 +109,13 @@ def game_main_loop():
 
     '''In this function, we loop the main game'''
 
+    global INTERACT_MODE
+
     running = True
 
     # player action definition
     player_action = "no-action"
+
 
     while running:
 
@@ -141,17 +126,26 @@ def game_main_loop():
         if player_action == "QUIT":
             running = False
 
+
         # if you aren't at your normal status, ai of npcs will take effect
-        elif player_action != "no-action":
+        elif player_action == "player-moved":
             for obj in GAME_OBJECTS:
                 if obj.ai:
-                    obj.ai.take_turn()
+                    obj.ai.take_turn(GAME_MAP)
+            INTERACT_MODE = False
+
+
+
+        elif player_action == "conversation":
+            INTERACT_MODE = True
+            print("we are in conversation mode")
+            print(INTERACT_MODE)
+
 
         # Drawing the game
         draw_game()
 
-        # TEMPORARY FPS CLOCK
-        CLOCK.tick(GAME_FPS)
+
 
     # Quitting the game
     pygame.quit()
@@ -159,29 +153,40 @@ def game_main_loop():
 
 
 def game_initialize():
-    '''This function initializes mainwindow and pygame '''         # v temporary
-    global SURFACE_MAIN, GAME_MAP, PLAYER, CLASSMATE, GAME_OBJECTS, CLOCK #temporary
+    '''This function initializes mainwindow and pygame '''
+    global SURFACE_MAIN, GAME_MAP, PLAYER, CLASSMATE, GAME_OBJECTS, All_CLASSMATES, INTERACT_MODE
+
     # important to keep everything in the initialization
 
     #initialize pygame
     pygame.init()
 
-    CLOCK = pygame.time.Clock()
+
 
     # sets parameters from constants.py
     SURFACE_MAIN = pygame.display.set_mode( (GAME_WIDTH, GAME_HEIGHT) )
     # gives map builder a variable
     GAME_MAP = map_create()
-    # Placeholder "Jason" is the name of the player character
-    classmate_com1 = com_Classmate("Jason")
-    PLAYER = obj_Actor(0, 0, "player", S_PLAYER, classmate = classmate_com1)
-    # This serves as the name and ai for an npc character, maybe make one for everyone?
-    classmate_com2 = com_Classmate("Tony")
-    ai_com = ai_Test()
-    CLASSMATE = obj_Actor(15, 5, "classmate", S_CLASSMATE, ai = ai_com)
-    # THESE ARE THE GAME OBJECTS BEING DRAWN IN THE DRAWING FUNCTION
-    GAME_OBJECTS = [PLAYER, CLASSMATE]
 
+    # Placeholder "Jason" is the name of the player character
+    classmate_com1 = com_Classmate("YOU")
+    PLAYER = obj_Actor(10, 0, "player", "trait1", "trait2", "trait3", S_PLAYER, classmate = classmate_com1)
+    # This serves as the name and ai for an npc character, maybe make one for everyone?
+    # classmate_com2 = com_Classmate("Tony")
+    ai_com = ai_Test()
+    # CLASSMATE = obj_Actor(15, 5, "classmate", S_CLASSMATE, ai = ai_com)
+
+
+
+
+
+    # THESE ARE THE GAME OBJECTS BEING DRAWN IN THE DRAWING FUNCTION, EVERY STUDENT
+    GAME_OBJECTS = [PLAYER]
+    # use extend possibly (read documentation)
+
+    All_CLASSMATES = generate_student()
+
+    GAME_OBJECTS.extend(All_CLASSMATES)
 
 
 def game_controls():
@@ -196,17 +201,19 @@ def game_controls():
         # Keyboard controls if a player moves, player_action in game main loop changes
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
-                PLAYER.move(0, -1)
+                PLAYER.move(0, -1, GAME_MAP)
                 return "player-moved"
             if event.key == pygame.K_DOWN:
-                PLAYER.move(0, 1)
+                PLAYER.move(0, 1, GAME_MAP)
                 return "player-moved"
             if event.key == pygame.K_LEFT:
-                PLAYER.move(-1, 0)
+                PLAYER.move(-1, 0, GAME_MAP)
                 return "player-moved"
             if event.key == pygame.K_RIGHT:
-                PLAYER.move(1, 0)
+                PLAYER.move(1, 0, GAME_MAP)
                 return "player-moved"
+            if event.key == pygame.K_SPACE:
+                return "conversation"
 
     return "no-action"
 
