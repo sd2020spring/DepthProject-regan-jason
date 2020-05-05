@@ -7,6 +7,7 @@ from partner_finder_controller import obj_Actor, ai_Test
 from constants import *
 from partner_finder_view import map_create
 from utilities import struc_Tile, com_Classmate, generate_student
+import random
 
 
 INTERACT_MODE = False
@@ -66,7 +67,7 @@ def draw_messages():
                 if INTERACT_MODE == False:
                     draw_text(SURFACE_MAIN, classmate.name+ " : Hi! my name is " + classmate.name, (0, 0), COLOR_BLUE)
                 else:
-                    draw_text(SURFACE_MAIN, classmate.name+ " We are now interacting! ", (0, 0), COLOR_BLUE)
+                    draw_text(SURFACE_MAIN, "I want you to know I am " + classmate.trait1 + ", " + classmate.trait2 + ', and ' + classmate.trait3, (0, 0), COLOR_BLUE)
 
 
 
