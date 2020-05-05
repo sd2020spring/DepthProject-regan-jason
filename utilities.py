@@ -10,7 +10,7 @@ Created by: Jason Lin and Regan Mah
 """
 import pygame
 import random
-from constants import names, traits1, traits2, traits3, S_CLASSMATE
+from constants import names, traits1, traits2, traits3, image_base
 from partner_finder_controller import obj_Actor, ai_Test
 # from partner_finder_controller import obj_Actor
 
@@ -68,6 +68,6 @@ def generate_student():
         students.append(obj_Actor(random.randint(1, 23), random.randint(1, 17),
                                     random.choice(names), random.choice(traits1),
                                     random.choice(traits2), random.choice(traits3),
-                                    S_CLASSMATE = image_base.pop(random.randint(1,23)), ai = ai_Test()))
-
+                                    sprite = image_base.pop(random.randint(0, len(image_base))), ai = ai_Test()))
+        S_CLASSMATE = pygame.image.load('data/'+students[n].sprite)
     return students
