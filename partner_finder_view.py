@@ -1,6 +1,6 @@
 # partner_finder_view
 import pygame
-from partner_finder_final import struc_Tile, com_Classmate
+from utilities import struc_Tile, com_Classmate
 from constants import *
 
 
