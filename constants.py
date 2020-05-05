@@ -43,8 +43,8 @@ traits3 = ["a pancake lover", "will eat anything", "a waffle lover"]
 image_base = [pygame.image.load("data/3d.png"), pygame.image.load('data/blue.png'), pygame.image.load('data/bread.png'),
 pygame.image.load('data/dabbing.png'), pygame.image.load('data/deal.png'), pygame.image.load('data/doge.PNG'),
 pygame.image.load('data/dogecoin.png'), pygame.image.load('data/headphone.png'), pygame.image.load('data/helmet.png'),
-pygame.image.load('data/kid.jpg'), pygame.image.load('data/pixel.png'), pygame.image.load('data/sandwich.png'),
-pygame.image.load('data/shout.png'), pygame.image.load('data/smug.png'), pygame.image.load('data/animu.JPG'),
-pygame.image.load('data/plush.jpeg'), pygame.image.load('data/poof.jpg'), pygame.image.load('data/sad.jpg'),
-pygame.image.load('data/shibaflower.jpg'), pygame.image.load('data/smile.jpg'), pygame.image.load('data/yawn.jpeg'),
-pygame.image.load('data/pot.jpeg')]
+pygame.image.load('data/kid.png'), pygame.image.load('data/pixel.png'), pygame.image.load('data/sandwich.png'),
+pygame.image.load('data/shout.png'), pygame.image.load('data/smug.png'), pygame.image.load('data/animu.png'),
+pygame.image.load('data/plush.png'), pygame.image.load('data/poof.png'), pygame.image.load('data/sad.png'),
+pygame.image.load('data/shibaflower.png'), pygame.image.load('data/smile.png'), pygame.image.load('data/yawn.png'),
+pygame.image.load('data/pot.png')]
