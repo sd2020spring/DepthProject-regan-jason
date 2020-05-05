@@ -24,7 +24,6 @@ COLOR_BLUE = (0, 0, 255)
 S_PLAYER = pygame.image.load("data/cheems.png")
 S_WALL = pygame.image.load("data/other.png")
 S_FLOOR = pygame.image.load("data/floor.png")
-#S_CLASSMATE = pygame.image.load(classmate.sprite)
 #pygame.image.load(S_CLASSMATE)
 
 # FONT
@@ -41,7 +40,11 @@ gradyear = ["2020", "2021", "2022", "2023", "2024"]
 traits1 = ["hardworking", "laidback", "a party animal"]
 traits2 = ["knowledgable", "resourceful", "clueless"]
 traits3 = ["a pancake lover", "will eat anything", "a waffle lover"]
-image_base = ["3d.png", 'blue.png', 'bread.png', 'dabbing.png', 'deal.png', 'doge.PNG',
-'dogecoin.png', 'headphone.png', 'helmet.png', 'kid.jpg', 'pixel.png', 'sandwich.png',
-'shout.png', 'smug.png', 'animu.png', 'plush.jpeg', 'poof.jpg', 'sad.jpg', 'shibaflower.jpg',
-'smile.jpg', 'yawn.jpeg', 'pot.jpeg',]
+image_base = [pygame.image.load("data/3d.png"), pygame.image.load('data/blue.png'), pygame.image.load('data/bread.png'),
+pygame.image.load('data/dabbing.png'), pygame.image.load('data/deal.png'), pygame.image.load('data/doge.PNG'),
+pygame.image.load('data/dogecoin.png'), pygame.image.load('data/headphone.png'), pygame.image.load('data/helmet.png'),
+pygame.image.load('data/kid.jpg'), pygame.image.load('data/pixel.png'), pygame.image.load('data/sandwich.png'),
+pygame.image.load('data/shout.png'), pygame.image.load('data/smug.png'), pygame.image.load('data/animu.JPG'),
+pygame.image.load('data/plush.jpeg'), pygame.image.load('data/poof.jpg'), pygame.image.load('data/sad.jpg'),
+pygame.image.load('data/shibaflower.jpg'), pygame.image.load('data/smile.jpg'), pygame.image.load('data/yawn.jpeg'),
+pygame.image.load('data/pot.jpeg')]
