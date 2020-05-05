@@ -24,12 +24,11 @@ COLOR_BLUE = (0, 0, 255)
 S_PLAYER = pygame.image.load("data/cheems.png")
 S_WALL = pygame.image.load("data/other.png")
 S_FLOOR = pygame.image.load("data/floor.png")
-S_CLASSMATE = pygame.image.load("data/doge.png")
-
-
+#S_CLASSMATE = pygame.image.load(classmate.sprite)
+#pygame.image.load(S_CLASSMATE)
 
 # FONT
-FONT_MESSAGE = pygame.font.Font('data\Roboto-Black.ttf', 20)
+FONT_MESSAGE = pygame.font.Font('data/Roboto-Black.ttf', 20)
 
 # Classmate properties
 names = ["Sophia", "Isabella", "Emma", "Olivia", "Ava", "Emily", "Abigial", "Ella",
@@ -39,6 +38,10 @@ names = ["Sophia", "Isabella", "Emma", "Olivia", "Ava", "Emily", "Abigial", "Ell
 "Jaden", "Kevin", "Xavier", "Ian", "Chase", "Ayden", "Carson", "Adam", "Thomas", "Jose",
 "Robert", "Dylan", "Joseph", "Caleb", "Elijah", "Evan", "Eli", "Luis"]
 gradyear = ["2020", "2021", "2022", "2023", "2024"]
-traits1 = ["hardworking", "laidback", "useless"]
+traits1 = ["hardworking", "laidback", "a party animal"]
 traits2 = ["knowledgable", "resourceful", "clueless"]
-traits3 = ["pancake_lover", "eats_anything", "waffle_lover"]
+traits3 = ["a pancake lover", "will eat anything", "a waffle lover"]
+image_base = ["3d.png", 'blue.png', 'bread.png', 'dabbing.png', 'deal.png', 'doge.PNG',
+'dogecoin.png', 'headphone.png', 'helmet.png', 'kid.jpg', 'pixel.png', 'sandwich.png',
+'shout.png', 'smug.png', 'animu.png', 'plush.jpeg', 'poof.jpg', 'sad.jpg', 'shibaflower.jpg',
+'smile.jpg', 'yawn.jpeg', 'pot.jpeg',]
