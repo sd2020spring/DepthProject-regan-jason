@@ -60,7 +60,7 @@ class com_Classmate:
 def generate_student():
 
     students = []
-    S_CLASSMATE = []
+
     classmate_number = 20
 
 
@@ -68,6 +68,5 @@ def generate_student():
         students.append(obj_Actor(random.randint(1, 23), random.randint(1, 17),
                                     random.choice(names), random.choice(traits1),
                                     random.choice(traits2), random.choice(traits3),
-                                    sprite = image_base.pop(random.randint(0, len(image_base))), ai = ai_Test()))
-        S_CLASSMATE.append(pygame.image.load('data/'+students[n].sprite))
+                                    sprite = image_base.pop(random.randint(0, len(image_base)-1)), ai = ai_Test()))
     return students
