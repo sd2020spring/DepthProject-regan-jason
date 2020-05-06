@@ -47,6 +47,15 @@ class com_Classmate:
 
         self.name_instance = name_instance
 
+class com_Professor:
+    '''
+    classmates can move around and be interacted with
+    '''
+    #GIVE AI
+    def __init__(self, name_instance):
+
+        self.name_instance = name_instance
+
 
     # Generates classmates: TODO could put this into its function
     # define a variable n representing number of classmates to generate
