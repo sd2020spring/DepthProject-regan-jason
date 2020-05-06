@@ -10,7 +10,7 @@ class struc_Tile:
         self.block_path = block_path
 
 class obj_Actor:
-    def __init__(self, x, y, name_object, trait1, trait2, trait3, sprite, classmate = None, ai = None):
+    def __init__(self, x, y, name_object, trait1, trait2, trait3, sprite, classmate = None, professor = None, ai = None):
         self.x = x  # map address
         self.y = y  # map address
         self.sprite = sprite
@@ -20,7 +20,11 @@ class obj_Actor:
         if classmate:
             self.classmate = classmate
             classmate.owner = self
-            
+        elif professor:
+            self.professor = professor
+            professor.owner = self
+
+
 
         self.trait1 = trait1
 
