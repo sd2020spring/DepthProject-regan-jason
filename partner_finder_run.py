@@ -6,7 +6,7 @@ import pygame
 from partner_finder_controller import obj_Actor, ai_Test
 from constants import *
 from partner_finder_view import map_create
-from utilities import struc_Tile, com_Classmate, generate_student
+from utilities import struc_Tile, com_Classmate, generate_student, com_Professor
 import random
 
 
@@ -63,12 +63,16 @@ def draw_messages():
 
     for classmate in All_CLASSMATES:
         if classmate.x == PLAYER.x and classmate.y == PLAYER.y:
-                print(INTERACT_MODE)
+
                 if INTERACT_MODE == False:
                     draw_text(SURFACE_MAIN, classmate.name+ " : Hi! my name is " + classmate.name, (0, 0), COLOR_BLUE)
                 else:
-                    draw_text(SURFACE_MAIN, "I want you to know I am " + classmate.trait1 + ", " + classmate.trait2 + ', and ' + classmate.trait3, (0, 0), COLOR_BLUE)
-
+                    draw_text(SURFACE_MAIN, classmate.name + ": I want you to know I am " + classmate.trait1 + ", " + classmate.trait2 + ', and ' + classmate.trait3, (0, 0), COLOR_BLUE)
+    if PLAYER.x == 1 and PLAYER.y == 1:
+            if INTERACT_MODE == False:
+                draw_text(SURFACE_MAIN, "Professor: oh hello there! Did you find a teammate?", (0, 0), COLOR_BLUE)
+            else:
+                draw_text(SURFACE_MAIN, "Professor: Who is it?", (0, 0), COLOR_BLUE)
 
 
 
@@ -173,7 +177,8 @@ def game_initialize():
     classmate_com1 = com_Classmate("YOU")
     PLAYER = obj_Actor(10, 0, "player", "trait1", "trait2", "trait3", S_PLAYER, classmate = classmate_com1)
     # This serves as the name and ai for an npc character, maybe make one for everyone?
-    # classmate_com2 = com_Classmate("Tony")
+    professor_com1 = com_Professor("Professor")
+    PROFESSOR = obj_Actor(1,1, "professor", "no trait", "no trait", "no trait", S_PROFESSOR, professor = professor_com1)
     ai_com = ai_Test()
     # CLASSMATE = obj_Actor(15, 5, "classmate", S_CLASSMATE, ai = ai_com)
 
@@ -182,8 +187,9 @@ def game_initialize():
 
 
     # THESE ARE THE GAME OBJECTS BEING DRAWN IN THE DRAWING FUNCTION, EVERY STUDENT
-    GAME_OBJECTS = [PLAYER]
+    GAME_OBJECTS = [PLAYER, PROFESSOR]
     # use extend possibly (read documentation)
+
 
     All_CLASSMATES = generate_student()
 
