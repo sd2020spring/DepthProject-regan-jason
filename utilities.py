@@ -29,6 +29,10 @@ class struc_Tile:
     def __init__(self, block_path):
         self.block_path = block_path
 
+class table_Tile:
+    def __init__(self, block_path):
+        self.block_path = block_path
+
 
 '''
   ____ ___  __  __ ____   ___  _   _ _____ _   _ _____ ____
@@ -57,21 +61,14 @@ class com_Professor:
         self.name_instance = name_instance
 
 
-    # Generates classmates: TODO could put this into its function
-    # define a variable n representing number of classmates to generate
-    # for i in n
-    # randomly choose a name from constants, and traits
-    # create object from obj_Actor class passing into it the name and traits
-
-
-
+    # Generates classmates with random traits and random sprites and
+    #random names
 
 def generate_student():
 
     students = []
 
     classmate_number = 20
-
 
     for n in range(classmate_number):
         students.append(obj_Actor(random.randint(1, 23), random.randint(1, 17),
