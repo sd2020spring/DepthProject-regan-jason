@@ -25,7 +25,6 @@ S_PLAYER = pygame.image.load("data/cheems.png")
 S_WALL = pygame.image.load("data/other.png")
 S_FLOOR = pygame.image.load("data/floor.png")
 S_PROFESSOR = pygame.image.load("data/professor.png")
-#pygame.image.load(S_CLASSMATE)
 
 # FONT
 FONT_MESSAGE = pygame.font.Font('data/Roboto-Black.ttf', 20)
