@@ -9,8 +9,10 @@ from partner_finder_view import map_create
 from utilities import struc_Tile, com_Classmate, generate_student, com_Professor
 import random
 
+# ENDGAME = False
+INTERACT_MODE = 0
+Player_yes = "NO"
 
-INTERACT_MODE = False
 
 '''''''''
   ____
@@ -58,21 +60,48 @@ def draw_map(map_to_draw):
                 #draw floor if its traversable
                 SURFACE_MAIN.blit(S_FLOOR, ( x*CELL_WIDTH, y*CELL_HEIGHT))
 
+
+    #if ENDGAME == True:
+    #    print("this is the endgame")
+    #    print(ENDGAME)
+    #    SURFACE_MAIN.blit(COLOR_BLACK)
+
+
+
 def draw_messages():
 
 
     for classmate in All_CLASSMATES:
         if classmate.x == PLAYER.x and classmate.y == PLAYER.y:
-
-                if INTERACT_MODE == False:
+                if INTERACT_MODE == 1:
                     draw_text(SURFACE_MAIN, classmate.name+ " : Hi! my name is " + classmate.name, (0, 0), COLOR_BLUE)
-                else:
+                elif INTERACT_MODE == 2:
                     draw_text(SURFACE_MAIN, classmate.name + ": I want you to know I am " + classmate.trait1 + ", " + classmate.trait2 + ', and ' + classmate.trait3, (0, 0), COLOR_BLUE)
+                elif INTERACT_MODE == 3:
+                    draw_text(SURFACE_MAIN, classmate.name + ": Do you want to be my parter?" + " " + "Yes=Y, No=N", (0,0), COLOR_BLUE)
+                elif INTERACT_MODE < 0:
+                    draw_text(SURFACE_MAIN, classmate.name + ": Oh okay...See you around!", (0,0), COLOR_BLUE)
+                elif INTERACT_MODE > 100:
+                    if classmate.trait1 == PLAYER.trait1 and classmate.trait2 == PLAYER.trait2 and classmate.trait3 == PLAYER.trait3:
+
+                        draw_text(SURFACE_MAIN, classmate.name + ": Awesome! I think we'd be great teammates! See you around!", (0,0), COLOR_BLUE)
+                    elif classmate.trait1 == PLAYER.trait1 and classmate.trait2 == PLAYER.trait2 or classmate.trait2 == PLAYER.trait2 and classmate.trait3 == PLAYER.trait3 or classmate.trait3 == PLAYER.trait3 and classmate.trait1 == PLAYER.trait1:
+
+                        draw_text(SURFACE_MAIN, classmate.name + ": Sure. Why not, could be worse.", (0,0), COLOR_BLUE)
+                    else:
+
+                        draw_text(SURFACE_MAIN, classmate.name + ": Me?! Are you sure?! I have a bad feeling about this...", (0,0), COLOR_BLUE)
+
+
+
     if PLAYER.x == 1 and PLAYER.y == 1:
-            if INTERACT_MODE == False:
-                draw_text(SURFACE_MAIN, "Professor: oh hello there! Did you find a teammate?", (0, 0), COLOR_BLUE)
-            else:
-                draw_text(SURFACE_MAIN, "Professor: Who is it?", (0, 0), COLOR_BLUE)
+            if INTERACT_MODE == 1:
+                draw_text(SURFACE_MAIN, "Professor: Hello there, I have a question for you! What are your three traits?", (0, 0), COLOR_BLUE)
+            elif INTERACT_MODE == 2:
+                draw_text(SURFACE_MAIN, "Professor: Oh, so you're " + PLAYER.trait1 + ", " + PLAYER.trait2 + ', and ' + PLAYER.trait3 , (0, 0), COLOR_BLUE)
+            elif INTERACT_MODE == 3:
+                draw_text(SURFACE_MAIN, "Professor: Good luck finding a partner that matches your traits! Don't fail!", (0, 0), COLOR_BLUE)
+
 
 
 
@@ -137,19 +166,43 @@ def game_main_loop():
             for obj in GAME_OBJECTS:
                 if obj.ai:
                     obj.ai.take_turn(GAME_MAP)
-            INTERACT_MODE = False
+            INTERACT_MODE = 0
 
 
 
         elif player_action == "conversation":
-            INTERACT_MODE = True
+            INTERACT_MODE += 1
             print("we are in conversation mode")
             print(INTERACT_MODE)
+
+        if player_action == "YES":
+            INTERACT_MODE += 100
+
+        elif player_action == "NO":
+            INTERACT_MODE += -10
+
+    #    for classmate in All_CLASSMATES:
+    #        if classmate.x == PLAYER.x and classmate.y == PLAYER.y:
+    #            if INTERACT_MODE > 100:
+    #                if classmate.trait1 == PLAYER.trait1 and classmate.trait2 == PLAYER.trait2 and classmate.trait3 == PLAYER.trait3:
+    #                    ENDGAME = True
+    #                elif classmate.trait1 == PLAYER.trait1 and classmate.trait2 == PLAYER.trait2 or classmate.trait2 == PLAYER.trait2 and classmate.trait3 == PLAYER.trait3 or classmate.trait3 == PLAYER.trait3 and classmate.trait1 == PLAYER.trait1:
+    #                    ENDGAME = True
+    #                else:
+    #                    ENDGAME = True
+
+
+    #    if ENDGAME == True:
+    #        print("this is the endgame")
+    #        print(ENDGAME)
+    #        SURFACE_MAIN.fill(COLOR_GREY)
+
+
+
 
 
         # Drawing the game
         draw_game()
-
 
 
     # Quitting the game
@@ -159,7 +212,7 @@ def game_main_loop():
 
 def game_initialize():
     '''This function initializes mainwindow and pygame '''
-    global SURFACE_MAIN, GAME_MAP, PLAYER, CLASSMATE, GAME_OBJECTS, All_CLASSMATES, INTERACT_MODE
+    global SURFACE_MAIN, GAME_MAP, PLAYER, CLASSMATE, GAME_OBJECTS, All_CLASSMATES, INTERACT_MODE, ENDGAME
 
     # important to keep everything in the initialization
 
@@ -175,7 +228,7 @@ def game_initialize():
 
     # Placeholder "Jason" is the name of the player character
     classmate_com1 = com_Classmate("YOU")
-    PLAYER = obj_Actor(10, 0, "player", "trait1", "trait2", "trait3", S_PLAYER, classmate = classmate_com1)
+    PLAYER = obj_Actor(10, 0, "player", random.choice(traits1), random.choice(traits2), random.choice(traits3), S_PLAYER, classmate = classmate_com1)
     # This serves as the name and ai for an npc character, maybe make one for everyone?
     professor_com1 = com_Professor("Professor")
     PROFESSOR = obj_Actor(1,1, "professor", "no trait", "no trait", "no trait", S_PROFESSOR, professor = professor_com1)
@@ -221,7 +274,10 @@ def game_controls():
                 return "player-moved"
             if event.key == pygame.K_SPACE:
                 return "conversation"
-
+            if event.key == pygame.K_y:
+                return "YES"
+            if event.key == pygame.K_n:
+                return "NO"
     return "no-action"
 
 
