@@ -61,4 +61,4 @@ python partner_finder_run.py
 ![](https://imgur.com/9CHuYq2.png)
 
 ## <strong>Attribution</strong>
-[https://www.pygame.org/docs/](# Pygame)Pygame is a set of modules used for developing games with Python. We used this to display and handle a lot of our game interactivity.
+[Pygame:](https://www.pygame.org/docs/)Pygame is a set of modules used for developing games with Python. We used this to display and handle a lot of our game interactivity.
