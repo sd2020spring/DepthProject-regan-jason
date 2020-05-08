@@ -52,11 +52,11 @@ Here is an image of your player character
 
 ![](https://imgur.com/S4vNPDy.png)
 
-1. </br>Talk to the professor on the top left area of the game</strong> with the <strong>[space bar]</strong> to find out what traits you have.
+<strong>1.</strong> Talk to the professor on the top left area of the game</strong> with the <strong>[space bar]</strong> to find out what traits you have.
 
-2. Talk to your classmates with the <strong>[space bar]</strong> to look for a partner with the same 3 traits as you. 
+<strong>2.</strong> Talk to your classmates with the <strong>[space bar]</strong> to look for a partner with the same 3 traits as you. 
 
-3. At the end of the conversation, press yes <strong>[y key] or no <strong>[n key]</strong> and decide who your teammate is, this will give you one of </strong>3 endings</strong>.
+<strong>3.</strong> At the end of the conversation, press yes <strong>[y key] or no <strong>[n key]</strong> and decide who your teammate is, this will give you one of </strong>3 endings</strong>.
 
 <img src="https://media.giphy.com/media/TcfCBcitbfPxrWkrfF/giphy.gif" width="960" height="540" />
 
