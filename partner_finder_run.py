@@ -9,7 +9,7 @@ from partner_finder_view import map_create
 from utilities import struc_Tile, com_Classmate, generate_student, com_Professor
 import random
 
-# ENDGAME = False
+#ENDGAME = False
 INTERACT_MODE = 0
 Player_yes = "NO"
 
@@ -23,28 +23,29 @@ Player_yes = "NO"
                                   |___/        '''''''''
 
 
-def draw_game():
+def draw_game(ENDGAME):
 
-
+    e = ENDGAME
     global SURFACE_MAIN
 
     # coloring background
     SURFACE_MAIN.fill(COLOR_GREY)
 
     # draw the map
-    draw_map(GAME_MAP)
+    draw_map(GAME_MAP, e)
 
     # draws in all game objects in the list in an easy fashion
     for obj in GAME_OBJECTS:
         obj.draw(SURFACE_MAIN)
 
-    draw_messages()
+    e = (draw_messages() or ENDGAME)
 
     # update the display
     pygame.display.flip()
+    return e
 
 
-def draw_map(map_to_draw):
+def draw_map(map_to_draw,ENDGAME):
     '''
     Draws the layout of the classroom.
     with tables/people
@@ -61,14 +62,37 @@ def draw_map(map_to_draw):
                 SURFACE_MAIN.blit(S_FLOOR, ( x*CELL_WIDTH, y*CELL_HEIGHT))
 
 
-    #if ENDGAME == True:
-    #    print("this is the endgame")
-    #    print(ENDGAME)
-    #    SURFACE_MAIN.blit(COLOR_BLACK)
+    if ENDGAME == True:
+       print("this is the endgame")
+       print(ENDGAME)
+       map_create()
+       SURFACE_MAIN.fill(COLOR_BLACK)
+      # if classmate.trait1 == PLAYER.trait1 and classmate.trait2 == PLAYER.trait2 and classmate.trait3 == PLAYER.trait3:
+        #   draw_text(SURFACE_MAIN, "You made the best Softdes project Olin has ever seen, your partner must have come from Babson. Either way your cleverness and wits got you through this, congrats!", (0,15), COLOR_WHITE)
+       #elif classmate.trait1 == PLAYER.trait1 and classmate.trait2 == PLAYER.trait2 or classmate.trait2 == PLAYER.trait2 and classmate.trait3 == PLAYER.trait3 or classmate.trait3 == PLAYER.trait3 and classmate.trait1 == PLAYER.trait1:
+        #   draw_text(SURFACE_MAIN, "You made an okay softdes project. Everything went smoothly, but you probably could have done better. Maybe if you had just chosen someone else...?", (0,15), COLOR_WHITE)
+       #else:
+        #   draw_text(SURFACE_MAIN, "You created the worst softdes project ever and argued non-stop over everything. This could have been avoided, your professor expected better.", (0,15), COLOR_WHITE)
+
+       for obj in GAME_OBJECTS:
+           GAME_OBJECTS.remove(obj)
+           return GAME_OBJECTS
+
+
+
 
 
 
 def draw_messages():
+    e = False
+    if PLAYER.x == 1 and PLAYER.y == 1:
+            e = False
+            if INTERACT_MODE == 1:
+                draw_text(SURFACE_MAIN, "Professor: Hello there, I have a question for you! What are your three traits?", (0, 0), COLOR_BLUE)
+            elif INTERACT_MODE == 2:
+                draw_text(SURFACE_MAIN, "Professor: Oh, so you're " + PLAYER.trait1 + ", " + PLAYER.trait2 + ', and ' + PLAYER.trait3 , (0, 0), COLOR_BLUE)
+            elif INTERACT_MODE == 3:
+                draw_text(SURFACE_MAIN, "Professor: Good luck finding a partner that matches your traits! Don't fail!", (0, 0), COLOR_BLUE)
 
 
     for classmate in All_CLASSMATES:
@@ -82,25 +106,28 @@ def draw_messages():
                 elif INTERACT_MODE < 0:
                     draw_text(SURFACE_MAIN, classmate.name + ": Oh okay...See you around!", (0,0), COLOR_BLUE)
                 elif INTERACT_MODE > 100:
+                    e = True
                     if classmate.trait1 == PLAYER.trait1 and classmate.trait2 == PLAYER.trait2 and classmate.trait3 == PLAYER.trait3:
-
                         draw_text(SURFACE_MAIN, classmate.name + ": Awesome! I think we'd be great teammates! See you around!", (0,0), COLOR_BLUE)
+                        draw_text(SURFACE_MAIN, "You made the best Softdes project Olin has ever seen!", (0,50), COLOR_GREEN)
+                        draw_text(SURFACE_MAIN, "Your partner must have been from Babson.", (0,100), COLOR_GREEN)
+                        draw_text(SURFACE_MAIN, "Either way your cleverness and wits got you through this, congrats!", (0,150), COLOR_GREEN)
+                        draw_text(SURFACE_MAIN, "Your professor personally gave you access to Olin College's endowment!", (0,200), COLOR_GREEN)
                     elif classmate.trait1 == PLAYER.trait1 and classmate.trait2 == PLAYER.trait2 or classmate.trait2 == PLAYER.trait2 and classmate.trait3 == PLAYER.trait3 or classmate.trait3 == PLAYER.trait3 and classmate.trait1 == PLAYER.trait1:
-
                         draw_text(SURFACE_MAIN, classmate.name + ": Sure. Why not, could be worse.", (0,0), COLOR_BLUE)
+                        draw_text(SURFACE_MAIN, "You made an okay softdes project.", (0,50), COLOR_GREY)
+                        draw_text(SURFACE_MAIN, "Everything went smoothly, but you probably could have done better.", (0,100), COLOR_GREY)
+                        draw_text(SURFACE_MAIN, "Maybe if you had chosen someone else...?", (0,150), COLOR_GREY)
                     else:
-
                         draw_text(SURFACE_MAIN, classmate.name + ": Me?! Are you sure?! I have a bad feeling about this...", (0,0), COLOR_BLUE)
+                        draw_text(SURFACE_MAIN, "You created the worst softdes project ever and argued non-stop over everything.", (0,50), COLOR_RED)
+                        draw_text(SURFACE_MAIN, "This could have been avoided, your professor expected better.", (0,100), COLOR_RED)
+
+
+    return e
 
 
 
-    if PLAYER.x == 1 and PLAYER.y == 1:
-            if INTERACT_MODE == 1:
-                draw_text(SURFACE_MAIN, "Professor: Hello there, I have a question for you! What are your three traits?", (0, 0), COLOR_BLUE)
-            elif INTERACT_MODE == 2:
-                draw_text(SURFACE_MAIN, "Professor: Oh, so you're " + PLAYER.trait1 + ", " + PLAYER.trait2 + ', and ' + PLAYER.trait3 , (0, 0), COLOR_BLUE)
-            elif INTERACT_MODE == 3:
-                draw_text(SURFACE_MAIN, "Professor: Good luck finding a partner that matches your traits! Don't fail!", (0, 0), COLOR_BLUE)
 
 
 
@@ -146,7 +173,7 @@ def game_main_loop():
     global INTERACT_MODE
 
     running = True
-
+    ENDGAME = False
     # player action definition
     player_action = "no-action"
 
@@ -181,28 +208,8 @@ def game_main_loop():
         elif player_action == "NO":
             INTERACT_MODE += -10
 
-    #    for classmate in All_CLASSMATES:
-    #        if classmate.x == PLAYER.x and classmate.y == PLAYER.y:
-    #            if INTERACT_MODE > 100:
-    #                if classmate.trait1 == PLAYER.trait1 and classmate.trait2 == PLAYER.trait2 and classmate.trait3 == PLAYER.trait3:
-    #                    ENDGAME = True
-    #                elif classmate.trait1 == PLAYER.trait1 and classmate.trait2 == PLAYER.trait2 or classmate.trait2 == PLAYER.trait2 and classmate.trait3 == PLAYER.trait3 or classmate.trait3 == PLAYER.trait3 and classmate.trait1 == PLAYER.trait1:
-    #                    ENDGAME = True
-    #                else:
-    #                    ENDGAME = True
 
-
-    #    if ENDGAME == True:
-    #        print("this is the endgame")
-    #        print(ENDGAME)
-    #        SURFACE_MAIN.fill(COLOR_GREY)
-
-
-
-
-
-        # Drawing the game
-        draw_game()
+        ENDGAME = draw_game(ENDGAME)
 
 
     # Quitting the game
