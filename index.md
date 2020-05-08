@@ -12,7 +12,7 @@
 
 ## Download the game
 
-### To download the game, head to this link: TBA
+### To download the game, head to this link: https://github.com/sd2020spring/DepthProject-regan-jason
 ### You'll want to make sure to read the README (as it tells you which files that you need as well as the controls) and then just simply run the partner_finder_run.py in python. The game window should pop up, and you should be able to talk to your fellow classmates!
 
 ## About the creators
