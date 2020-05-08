@@ -31,4 +31,6 @@
 
 ## <strong>About the creators</strong>
 
-### Regan is an Olin student while Jason is a Babson student. They were randomly paired for Mini-project 4, but had such a good final project idea that even in the face of COVID, they were prepared to see it through. This wonderful game is a simulation (not really) of the Olin Softdes class environment, and the joys of knowing that people have different work habits, and how they may or may not mesh well. Regan and Jason (despite being from Olin and Babson) managed to create a game that reminds us all that its okay to work with others, and in fact, you may get more out of it than you would think.
+### Regan is an Olin student while Jason is a Babson student. They were randomly paired for Mini-project 4, but had such a good final project idea that even in the face of COVID, they were prepared to see it through. This wonderful game is a simulation (not really) of the Olin Softdes class environment, and the joys of knowing that people have different work habits, and how they may or may not mesh well. Regan and Jason (despite being from Olin and Babson) managed to smoothly create a game that reminds us all that its okay to work with others, and in fact, you may get more out of it than you would think.
+
+![](https://imgur.com/9CHuYq2.png)
