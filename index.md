@@ -56,7 +56,7 @@ Here is an image of your player character
 
 <strong>2.</strong> Talk to your classmates with the <strong>[space bar]</strong> to look for a partner with the same 3 traits as you. 
 
-<strong>3.</strong> At the end of the conversation, press yes <strong>[y key] or no <strong>[n key]</strong> and decide who your teammate is, this will give you one of </strong>3 endings</strong>.
+<strong>3.</strong> At the end of the conversation, press yes <strong>[y key]</strong> or no <strong>[n key]</strong> and decide who your teammate is, this will give you one of 3 endings.
 
 <img src="https://media.giphy.com/media/TcfCBcitbfPxrWkrfF/giphy.gif" width="960" height="540" />
 
