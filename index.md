@@ -1,6 +1,6 @@
 ![](https://imgur.com/frLAQFq.png)
 
-##          By Jason Lin and Regan Mah
+##          <em>By Jason Lin and Regan Mah</em>
 
 ## <strong>What is Softdes Partner Finder</strong>
 
