@@ -17,7 +17,9 @@ When making our game, we organized our foundation into 4 main components.
 
 <strong>Game:</strong> This is where we organized the main game loop, controls, and initialization. We used this section to run the game loop and house global variables and gameplay conditions. 
 
-<strong>Objects:</strong> Our objects included things from our main actor class.<br>
+<strong>Objects:</strong> Our objects included things from our main actor class (which represents all active characters) as well as tiles that helped shape the impassable walls around the game. These objects were the structure in which we drew and interacted with different components within the game.<br>
+
+<strong>Constants:</strong> Our constants housed all the colors, sprites, player names, traits, and measurements we used in the game in an organized layout.
 
 ```python
 class obj_Actor:
@@ -36,9 +38,7 @@ class obj_Actor:
             professor.owner = self
             
         self.trait1 = trait1
-
         self.trait2 = trait2
-
         self.trait3 = trait3
 
         self.ai = ai
