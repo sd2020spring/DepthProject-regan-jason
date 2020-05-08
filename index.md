@@ -1,4 +1,4 @@
-![](https://imgur.com/482e4lT.png)
+![](https://imgur.com/MPDIYbt.png)
 
 ##          By Jason Lin and Regan Mah
 
