@@ -21,36 +21,6 @@ When making our game, we organized our foundation into 4 main components.
 
 <strong>Constants:</strong> Our constants housed all the colors, sprites, player names, traits, and measurements we used in the game in an organized layout.
 
-```python
-class obj_Actor:
-    def __init__(self, x, y, name_object, trait1, trait2, trait3, sprite, classmate = None, professor = None, ai = None):
-        self.x = x  # map address
-        self.y = y  # map address
-        self.sprite = sprite
-        self.name = name_object
-
-        self.classmate = classmate
-        if classmate:
-            self.classmate = classmate
-            classmate.owner = self
-        elif professor:
-            self.professor = professor
-            professor.owner = self
-            
-        self.trait1 = trait1
-        self.trait2 = trait2
-        self.trait3 = trait3
-
-        self.ai = ai
-        if ai:
-            self.ai = ai
-            ai.owner = self
-```
-
-
-
-
-
 ## <strong>Download the game</strong>
 
 To download the game, head to this [Link:](https://github.com/sd2020spring/DepthProject-regan-jason) <br>
