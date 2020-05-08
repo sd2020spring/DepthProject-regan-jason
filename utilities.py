@@ -75,4 +75,5 @@ def generate_student():
                                     random.choice(names), random.choice(traits1),
                                     random.choice(traits2), random.choice(traits3),
                                     sprite = image_base.pop(random.randint(0, len(image_base)-1)), ai = ai_Test()))
+
     return students
