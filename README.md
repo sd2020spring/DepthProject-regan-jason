@@ -19,6 +19,10 @@ pip install pygame
 ```
 
 ### Running the game
+To run the game, simply run
+```
+python partner_finder_run.py
+```
 
 ## CODE
 
