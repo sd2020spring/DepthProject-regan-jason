@@ -54,6 +54,8 @@ Here is an image of your player character
 
 <strong>1.</strong> Talk to the professor on the top left area of the game with the <strong>[space bar]</strong> to find out what traits you have.
 
+![](https://imgur.com/d1jDxBk.png)
+
 <strong>2.</strong> Talk to your classmates with the <strong>[space bar]</strong> to look for a partner with the same 3 traits as you. 
 
 <strong>3.</strong> At the end of the conversation, press yes <strong>[y key]</strong> or no <strong>[n key]</strong> and decide who your teammate is, this will give you one of 3 endings.
