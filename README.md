@@ -14,9 +14,9 @@ Maybe you'll create the best final project with your partner!
 
 ### Installation 
 SoftDes Partner finder is built and dependent on pygame. To install pygame:
-'''
+```
 pip install pygame
-'''
+```
 ## CODE
 
 partner_finder_run.py = Main function that holds the game loop.
