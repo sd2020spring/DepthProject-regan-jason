@@ -9,7 +9,10 @@ SoftDes Partner Finder is a game that focuses on you--the player character--as y
 ## <strong>How The Game Was Made</strong>
 
 To make a game with python, we relied on a set of modules called pygame to help display and control the player character. <br>
-When 
+
+When making our game, we organized our foundation into 3 main components.
+
+<strong>Drawing:</strong> This is where we managed all the visual components of the game including text, the map, and all in-game characters.
 
 
 
@@ -17,7 +20,8 @@ When
 
 ## <strong>Download the game</strong>
 
-To download the game, head to this [Link:](https://github.com/sd2020spring/DepthProject-regan-jason): <br>
+To download the game, head to this [Link:](https://github.com/sd2020spring/DepthProject-regan-jason) <br>
+
 You'll want to make sure to read the README (as it tells you which files that you need as well as the controls) and then just simply run the partner_finder_run.py in python. The game window should pop up, and you should be able to talk to your fellow classmates!
 
 ## <strong>Playing the game</strong>
