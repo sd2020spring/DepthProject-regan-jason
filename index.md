@@ -44,16 +44,24 @@ python partner_finder_run.py
 ## <strong>The Gameplay Loop</strong>
 
 Instead of human beings, the software design class will be filled with dogs this time around. <br>
+
+Every student (21 in total including you) will have randomly generated traits everytime you play the game. To find out what your traits are, you will have to speak to the professor on the top left part of the game window. You will then have to talk to all your classmates to find out their traits. You will have an option to select your partner on the spot at the end of your dialogue with any student to lock in your choice. Your objective is to choose someone who has all 3 traits that match with yours.
+
+### TLDR
 Here is an image of your player character
 
 ![](https://imgur.com/S4vNPDy.png)
 
-Every student (21 in total including you) will have randomly generated traits everytime you play the game. To find out what your traits are, you will have to speak to the professor on the top left part of the game window. You will then have to talk to all your classmates to find out their traits. You will have an option to select your partner on the spot at the end of your dialogue with any student to lock in your choice. Your objective is to choose someone who has all 3 traits that match with yours.
+1. </br>Talk to the professor on the top left area of the game</strong> with the <strong>[space bar]</strong> to find out what traits you have.
+
+2. Talk to your classmates with the <strong>[space bar]</strong> to look for a partner with the same 3 traits as you. 
+
+3. At the end of the conversation, press yes <strong>[y key] or no <strong>[n key]</strong> and decide who your teammate is, this will give you one of </strong>3 endings</strong>.
 
 <img src="https://media.giphy.com/media/TcfCBcitbfPxrWkrfF/giphy.gif" width="960" height="540" />
 
 
-Depending on your decision, there will be 3 different endings you can get depending on your compatability with your partner. Good luck and have fun!
+Depending on your decision, the three decisions will be largely different so good luck and have fun with it!
 
 ## <strong>HOW TO PLAY/KEYS</strong>
 
