@@ -19,6 +19,8 @@ COLOR_BLACK = (0,0,0)
 COLOR_WHITE = (255, 255, 255)
 COLOR_GREY = (100, 100, 100)
 COLOR_BLUE = (0, 0, 255)
+COLOR_RED = (255, 0, 0)
+COLOR_GREEN = (0,255,0)
 
 #SPRITES
 S_PLAYER = pygame.image.load("data/cheems.png")
