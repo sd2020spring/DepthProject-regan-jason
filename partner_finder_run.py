@@ -117,13 +117,13 @@ def draw_messages():
                         draw_text(SURFACE_MAIN, classmate.name + ": Sure. Why not, could be worse.", (0,0), COLOR_BLUE)
                         draw_text(SURFACE_MAIN, "You made an okay softdes project.", (0,50), COLOR_GREY)
                         draw_text(SURFACE_MAIN, "Everything went smoothly(?), but you probably could have done better.", (0,100), COLOR_GREY)
-                        draw_text(SURFACE_MAIN, "No one walked up to your booth at the expo, and you recieved no recognition.", (0,100), COLOR_GREY)
-                        draw_text(SURFACE_MAIN, "Maybe if you had chosen someone else...maybe a Babson Student?", (0,150), COLOR_GREY)
+                        draw_text(SURFACE_MAIN, "No one walked up to your booth at the expo, and you recieved no recognition.", (0,150), COLOR_GREY)
+                        draw_text(SURFACE_MAIN, "Maybe if you had chosen someone else...maybe a Babson Student?", (0,200), COLOR_GREY)
                     else:
                         draw_text(SURFACE_MAIN, classmate.name + ": Me?! Are you sure?! I have a bad feeling about this...", (0,0), COLOR_BLUE)
                         draw_text(SURFACE_MAIN, "You created the worst softdes project ever and argued non-stop over everything.", (0,50), COLOR_RED)
                         draw_text(SURFACE_MAIN, "This could have been avoided, your professor expected better.", (0,100), COLOR_RED)
-                        draw_text(SURFACE_MAIN, "The product of too much olin-inbreeding...maybe mingle with Babson students?", (0,100), COLOR_RED)
+                        draw_text(SURFACE_MAIN, "The product of too much olin-inbreeding...maybe mingle with Babson students?", (0,150), COLOR_RED)
 
 
     return e
