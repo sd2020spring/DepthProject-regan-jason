@@ -10,9 +10,42 @@ SoftDes Partner Finder is a game that focuses on you--the player character--as y
 
 To make a game with python, we relied on a set of modules called pygame to help display and control the player character. <br>
 
-When making our game, we organized our foundation into 3 main components.
+When making our game, we organized our foundation into 4 main components.
 
-<strong>Drawing:</strong> This is where we managed all the visual components of the game including text, the map, and all in-game characters.
+<strong>Drawing:</strong> This is where we managed all the visual components of the game including text, the map, and all in-game characters.<br> 
+
+
+<strong>Game:</strong> This is where we organized the main game loop, controls, and initialization. We used this section to run the game loop and house global variables and gameplay conditions. 
+
+<strong>Objects:</strong> Our objects included things from our main actor class.<br>
+
+```python
+class obj_Actor:
+    def __init__(self, x, y, name_object, trait1, trait2, trait3, sprite, classmate = None, professor = None, ai = None):
+        self.x = x  # map address
+        self.y = y  # map address
+        self.sprite = sprite
+        self.name = name_object
+
+        self.classmate = classmate
+        if classmate:
+            self.classmate = classmate
+            classmate.owner = self
+        elif professor:
+            self.professor = professor
+            professor.owner = self
+            
+        self.trait1 = trait1
+
+        self.trait2 = trait2
+
+        self.trait3 = trait3
+
+        self.ai = ai
+        if ai:
+            self.ai = ai
+            ai.owner = self
+```
 
 
 
