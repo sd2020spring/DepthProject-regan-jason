@@ -43,6 +43,17 @@ python partner_finder_run.py
 
 ### Depending on your decision, there will be 3 different endings you can get depending on your compatability with your partner. Good luck and have fun!
 
+## <strong>HOW TO PLAY/KEYS</strong>
+
+<strong>Left</strong> = left arrow
+<strong>Right</strong> = right arrow
+<strong>Up</strong> = up arrow
+<strong>Down</strong> = down arrow
+<strong>Interact/Talk</strong> = Space Bar
+<strong>Yes</strong> = Y
+<strong>No</strong> = N
+
+
 ## <strong>About the creators</strong>
 
 ### Regan is an Olin student while Jason is a Babson student. They were randomly paired for Mini-project 4, but had such a good final project idea that even in the face of COVID, they were prepared to see it through. This wonderful game is a simulation (not really) of the Olin Softdes class environment, and the joys of knowing that people have different work habits, and how they may or may not mesh well. Regan and Jason (despite being from Olin and Babson) managed to smoothly create a game that reminds us all that its okay to work with others, and in fact, you may get more out of it than you would think.
