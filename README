@@ -5,6 +5,8 @@ SOFTDES PARTNER FINDER
 In this game, you will be attempting to find the perfect Softdes partner.
 Traverse the classroom, interact with your classmates, and learn about their
 working styles and habits.
+Talking to your teacher allows you to know which workings styles and habits
+you have.
 Maybe you'll create the best final project with your partner!
 
 CODE
@@ -24,4 +26,4 @@ Up = up arrow
 Down = down arrow
 Space = interact
 y = Yes
-n = No 
+n = No
