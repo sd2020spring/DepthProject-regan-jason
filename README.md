@@ -1,7 +1,7 @@
 # DEPTH PROJECT README
 
 ## SOFTDES PARTNER FINDER
-![](https://imgur.com/Iy57ofg.png)
+![](https://imgur.com/On7OE6c.png)
 
 ### In this game, you will be attempting to find the perfect Softdes partner.
 Traverse the classroom, interact with your classmates, and learn about their
