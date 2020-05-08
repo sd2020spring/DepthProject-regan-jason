@@ -9,7 +9,19 @@ Maybe you'll create the best final project with your partner!
 
 CODE
 
-partner_finder_final.py = holds all the important classes and their functions.
-partner_finder_controller.py = holds all the info about controlling the player character and the different button functions
-partner_finder_viewer.py = updates environment depending on where the player character moves
+partner_finder_run.py = Main function that holds the game loop.
+partner_finder_controller.py = holds all the info about controlling the player character and the different ai
+partner_finder_viewer.py = draws map of the classroom.
+data = has all the pictures used for the sprites
+utilities.py = holds some useful functions--including random character generation
+constants.py = holds the constants used in other files
 
+HOW TO PLAY/KEYS
+
+Left = left arrow
+Right = right arrow
+Up = up arrow
+Down = down arrow
+Space = interact
+y = Yes
+n = No 
