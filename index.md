@@ -45,13 +45,13 @@ python partner_finder_run.py
 
 ## <strong>HOW TO PLAY/KEYS</strong>
 
-<strong>Left</strong> = left arrow
-<strong>Right</strong> = right arrow
-<strong>Up</strong> = up arrow
-<strong>Down</strong> = down arrow
-<strong>Interact/Talk</strong> = Space Bar
-<strong>Yes</strong> = Y
-<strong>No</strong> = N
+<strong>Left</strong> = left arrow <br>
+<strong>Right</strong> = right arrow <br>
+<strong>Up</strong> = up arrow <br>
+<strong>Down</strong> = down arrow <br> 
+<strong>Interact/Talk</strong> = Space Bar <br>
+<strong>Yes</strong> = Y <br> 
+<strong>No</strong> = N <br>
 
 
 ## <strong>About the creators</strong>
