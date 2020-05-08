@@ -1,6 +1,6 @@
 # DEPTH PROJECT README
 
-##SOFTDES PARTNER FINDER
+## SOFTDES PARTNER FINDER
 
 ### In this game, you will be attempting to find the perfect Softdes partner.
 Traverse the classroom, interact with your classmates, and learn about their
