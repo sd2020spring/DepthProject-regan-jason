@@ -1,5 +1,4 @@
-# Softdes Partner Finder Game
-
+![](https://imgur.com/frLAQFq.png)
 
 ##          By Jason Lin and Regan Mah
 
