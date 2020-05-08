@@ -2,7 +2,7 @@
 
 ##          By Jason Lin and Regan Mah
 
-## What is Softdes Partner Finder
+## <strong>What is Softdes Partner Finder</strong>
 
 ### SoftDes Partner Finder is a game that focuses on you--the player character--as you traverse the Software Design landscape to find the perfect partner. Like most other individuals with a mind of their own, you have preferences on who you'd prefer to work in a project with and this is crucial to your academic success. This decision could mean the difference between life or death, so take your due diligence and scout out the local talent!
 
