@@ -1,4 +1,4 @@
-![](<blockquote class="imgur-embed-pub" lang="en" data-id="a/t7owk3d" data-context="false" ><a href="//imgur.com/a/t7owk3d"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>)
+![](https://imgur.com/a/t7owk3d.jpg)
 
 ##          By Jason Lin and Regan Mah
 
