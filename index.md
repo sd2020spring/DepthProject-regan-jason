@@ -25,7 +25,7 @@
 ### Every student (21 in total including you) will have randomly generated traits everytime you play the game. To find out what your traits are, you will have to speak to the professor on the top left part of the game window. You will then have to talk to all your classmates to find out their traits. You will have an option to select your partner on the spot at the end of your dialogue with any student to lock in your choice. Your objective is to choose someone who has all 3 traits that match with yours.
 
 ![](https://gfycat.com/unrealisticfatherlyfrog.gif)
-<iframe src='https://gfycat.com/ifr/UnrealisticFatherlyFrog' frameborder='0' scrolling='no' allowfullscreen width='640' height='404'></iframe>
+
 
 ### Depending on your decision, there will be 3 different endings you can get depending on your compatability with your partner. Good luck and have fun!
 
