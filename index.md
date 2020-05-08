@@ -52,7 +52,7 @@ Here is an image of your player character
 
 ![](https://imgur.com/S4vNPDy.png)
 
-<strong>1.</strong> Talk to the professor on the top left area of the game</strong> with the <strong>[space bar]</strong> to find out what traits you have.
+<strong>1.</strong> Talk to the professor on the top left area of the game with the <strong>[space bar]</strong> to find out what traits you have.
 
 <strong>2.</strong> Talk to your classmates with the <strong>[space bar]</strong> to look for a partner with the same 3 traits as you. 
 
