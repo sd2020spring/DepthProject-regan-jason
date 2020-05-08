@@ -15,6 +15,20 @@
 ### To download the game, head to this link: https://github.com/sd2020spring/DepthProject-regan-jason
 ### You'll want to make sure to read the README (as it tells you which files that you need as well as the controls) and then just simply run the partner_finder_run.py in python. The game window should pop up, and you should be able to talk to your fellow classmates!
 
+## Playing the game
+
+### Installation 
+SoftDes Partner finder is built and dependent on pygame. To install pygame:
+```
+pip install pygame
+```
+
+### Running the game
+To run the game, simply run
+```
+python partner_finder_run.py
+```
+
 ## <strong>The Gameplay Loop</strong>
 
 ### Instead of human beings, the software design class will be filled with dogs this time around. 
