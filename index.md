@@ -20,7 +20,7 @@
 ### Instead of human beings, the software design class will be filled with dogs this time around. 
 ### Here is an image of your player character
 
-![](https://imgur.com/DiXlqmY.png)
+![](https://imgur.com/tU0MBoA.png)
 
 ### Every student (21 in total including you) will have randomly generated traits everytime you play the game. To find out what your traits are, you will have to speak to the professor on the top left part of the game window. You will then have to talk to all your classmates to find out their traits. You will have an option to select your partner on the spot at the end of your dialogue with any student to lock in your choice. Your objective is to choose someone who has all 3 traits that match with yours.
 
