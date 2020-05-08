@@ -8,7 +8,10 @@
 
 ## <strong>How The Game Was Made</strong>
 
-### When we decided to create a game using python, we decided on using the framework pygame to set our foundation. From there we used pygame's numerous tools (as well as lots of pictures of doges from the internet) to create the classroom environment and the classmates.
+When we decided to create a game using python, we decided on using a set of modules called pygame to set our foundation. <br>
+
+
+
 
 ## <strong>Download the game</strong>
 
